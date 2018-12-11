@@ -1,0 +1,14 @@
+<html>
+  <body>
+    <%= link_to 'New Character', "character/new" %>
+    <%= @characters.each do |character| %>
+    <div>
+      <p><%= character.name %></p>
+      <img src=<%= character.image %>/>
+      <p>Level <%= character.level %> <%= character.job %></p>
+      <p>Race: <%= character.race %></p>
+      <%= link_to "View Character", "character/show" %>
+    </div>
+    <% end %>
+  </body>
+</html>
