@@ -1,14 +1,16 @@
 <html>
   <body>
     <%= link_to 'New Character', "character/new" %>
+    <div class="main-area">
     <%= @characters.each do |character| %>
-    <div>
-      <p><%= character.name %></p>
-      <img src=<%= character.image %>/>
-      <p>Level <%= character.level %> <%= character.job %></p>
-      <p>Race: <%= character.race %></p>
-      <%= link_to "View Character", "character/show" %>
-    </div>
+      <div class="character-block">
+        <h3><%= character.name %></h3>
+        <img src=<%= character.image %>/>
+        <p>Level <%= character.level %> <%= character.job %></p>
+        <p>Race: <%= character.race %></p>
+        <%= link_to "View Character", character_path(character.id)%>
+      </div>
     <% end %>
+    </div>
   </body>
 </html>
