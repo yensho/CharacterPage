@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <div class="main-area">
+      <div class="character-block">
+        <h3><%= @character.name %></h3>
+        <img src=<%= @character.image %>/>
+        <p>Level <%= @character.level %> <%= @character.job %></p>
+        <p>Race: <%= @character.race %></p>
+        <p>Description: <%= @character.description %></p>
+        <p>Spells: <%= @character.spells %></p>
+        <%= link_to "Back to index", "character/index" %>
+      </div>
+    </div>
+  </body>
+</html>
