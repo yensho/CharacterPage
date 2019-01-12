@@ -6,14 +6,14 @@
   </head>
   <body>
     <h1>New Character Page</h1>
-    <%= form_for(Character.new) do |f| %>
+    <%= form_for(@character, url: character_index_path) do |f| %>
       Name: <%= f.text_field :name %><br />
       Level: <%= f.number_field :level %><br />
       Class: <%= f.text_field :job %><br />
       Race: <%= f.text_field :race %><br />
       Description: <%= f.text_area :description %><br />
       Spells: <%= f.text_area :spells %><br />
-      <%= f.submit "Create" %>
+    <%= f.submit "Create" %>
     <% end %>
   </body>
 </html>

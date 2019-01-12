@@ -5,6 +5,7 @@ class CharacterController < ApplicationController
   end
 
   def new
+    @character = Character.new
   end
 
   def show
@@ -25,6 +26,6 @@ class CharacterController < ApplicationController
   private
 
   def character_params
-    params.require(:character).permit(:character)
+    params.require(:character).permit(:name, :level, :job, :race, :description, :spells)
   end
 end
