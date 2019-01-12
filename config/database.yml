@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: CharacterPage_test
+  database: characterpage_database
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: CharacterPage_production
+  database: characterpage_database
   username: CharacterPage
   password: <%= ENV['CHARACTERPAGE_DATABASE_PASSWORD'] %>
