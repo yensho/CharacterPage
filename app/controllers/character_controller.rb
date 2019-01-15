@@ -22,6 +22,33 @@ class CharacterController < ApplicationController
     end
   end
 
+  def edit
+    @character = Character.find(params[:id])
+  end
+
+  def update
+    @character = Character.find(params[:id])
+
+    if @character.update(character_params)
+      redirect_to @character
+    else
+      render 'edit'
+    end
+  end
+
+  def confirm
+    @character = Character.find(params[:id])
+  end
+
+  def destroy
+    @character = Character.find(params[:id])
+
+    if @character.destroy
+      redirect_to '/'
+    else
+      render @character
+    end
+  end
 
   private
 

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Edit Character entry</h1>
+    <%= form_for(@character) do |f| %>
+      Name: <%= f.text_field :name %><br />
+      Level: <%= f.number_field :level %><br />
+      Class: <%= f.text_field :job %><br />
+      Race: <%= f.text_field :race %><br />
+      Description: <%= f.text_area :description %><br />
+      Spells: <%= f.text_area :spells %><br />
+    <%= f.submit "Update" %>
+    <% end %>
+  </body>
+</html>
