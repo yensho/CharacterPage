@@ -36,6 +36,20 @@ class CharacterController < ApplicationController
     end
   end
 
+  def confirm
+    @character = Character.find(params[:id])
+  end
+
+  def destroy
+    @character = Character.find(params[:id])
+
+    if @character.destroy
+      redirect_to '/'
+    else
+      render @character
+    end
+  end
+
   private
 
   def character_params

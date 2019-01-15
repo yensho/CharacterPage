@@ -1,0 +1,13 @@
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Are you sure you want to delete <%= @character.name %>?</h1>
+
+    <%= link_to "Delete", character_path(@character.id), method: "delete" %><br />
+    <%= link_to "Character", '/' %>
+  </body>
+</html>

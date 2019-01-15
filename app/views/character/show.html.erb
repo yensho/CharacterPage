@@ -8,8 +8,9 @@
         <p>Race: <%= @character.race %></p>
         <p>Description: <%= @character.description %></p>
         <p>Spells: <%= @character.spells %></p>
-        <%= link_to "Back to index", "/" %>
-        <%= link_to "Update Character", edit_character_path(@character.id) %>
+        <%= link_to "Back to index", "/" %><br />
+        <%= link_to "Update Character", edit_character_path(@character.id) %><br />
+        <%= link_to "Delete Character", "#{@character.id}/confirm" %>
       </div>
     </div>
   </body>
