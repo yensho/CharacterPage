@@ -9,6 +9,7 @@
         <p>Description: <%= @character.description %></p>
         <p>Spells: <%= @character.spells %></p>
         <%= link_to "Back to index", "/" %>
+        <%= link_to "Update Character", edit_character_path(@character.id) %>
       </div>
     </div>
   </body>
