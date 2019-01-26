@@ -7,12 +7,21 @@
   <body>
     <h1>Edit Character entry</h1>
     <%= form_for(@character) do |f| %>
-      Name: <%= f.text_field :name %><br />
-      Level: <%= f.number_field :level %><br />
-      Class: <%= f.text_field :job %><br />
-      Race: <%= f.text_field :race %><br />
-      Description: <%= f.text_area :description %><br />
-      Spells: <%= f.text_area :spells %><br />
+    <h3>Basic Info</h3>
+    Name: <%= f.text_field :name %><br />
+    Level: <%= f.number_field :level %><br />
+    Class: <%= f.text_field :job %><br />
+    Race: <%= f.text_field :race %><br />
+    <h3>Ability Scores</h3><br />
+    Str: <%= f.number_field :str %><br />
+    Dex: <%= f.number_field :dex %><br />
+    Con: <%= f.number_field :con %><br />
+    Int: <%= f.number_field :int %><br />
+    Wis: <%= f.number_field :wis %><br />
+    Cha: <%= f.number_field :cha %><br />
+    <h3>Extra</h3>
+    Description: <%= f.text_area :description %><br />
+    Spells: <%= f.text_area :spells %><br />
     <%= f.submit "Update" %>
     <% end %>
   </body>
