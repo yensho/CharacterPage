@@ -1,7 +1,9 @@
 class CharacterController < ApplicationController
+  before_action :set_character, only: [:destroy, :confirm, :edit, :show, :update]
 
   def index
-    @characters = Character.all
+    chars = Character.all
+    @characters = chars.sort_by {|c| c.name}
   end
 
   def new
@@ -9,7 +11,6 @@ class CharacterController < ApplicationController
   end
 
   def show
-    @character = Character.find(params[:id])
   end
 
   def create
@@ -23,12 +24,9 @@ class CharacterController < ApplicationController
   end
 
   def edit
-    @character = Character.find(params[:id])
   end
 
   def update
-    @character = Character.find(params[:id])
-
     if @character.update(character_params)
       redirect_to @character
     else
@@ -37,12 +35,9 @@ class CharacterController < ApplicationController
   end
 
   def confirm
-    @character = Character.find(params[:id])
   end
 
   def destroy
-    @character = Character.find(params[:id])
-
     if @character.destroy
       redirect_to '/'
     else
@@ -54,5 +49,9 @@ class CharacterController < ApplicationController
 
   def character_params
     params.require(:character).permit(:name, :level, :job, :race, :description, :spells)
+  end
+
+  def set_character
+    @character = Character.find(params[:id])
   end
 end
